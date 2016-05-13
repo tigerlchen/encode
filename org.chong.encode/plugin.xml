@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+		point="org.eclipse.ui.popupMenus">
+		<viewerContribution
+			targetID="#ClassFileEditorContext"
+			id="org.chong.gbk.popups.viewer">
+			<action
+				definitionId="org.chong.ui.EncodeToGBKEditorAction.open"
+				label="Encode For GBK"
+				icon="icons/chong.png"
+				class="org.chong.ui.EncodeToGBKEditorAction"
+				menubarPath="additions"
+				id="org.chong.ui.EncodeToGBKEditorAction.classFileViewer">
+			</action>
+		</viewerContribution>
+		<viewerContribution
+			targetID="#ClassFileEditorContext"
+			id="org.chong.utf8.popups.viewer">
+			<action
+				definitionId="org.chong.ui.EncodeToUTF8EditorAction.open"
+				label="Encode For UTF-8"
+				icon="icons/chong.png"
+				class="org.chong.ui.EncodeToUTF8EditorAction"
+				menubarPath="additions"
+				id="org.chong.ui.EncodeToUTF8EditorAction.classFileViewer">
+			</action>
+		</viewerContribution>
+		
+		<objectContribution
+            objectClass="org.eclipse.core.resources.IResource"
+            id="org.apusic.studio.tools.popup.actions"
+            adaptable="true">
+          <menu
+            id="org.apusic.studio.tools.menu" 
+            path="additions" 
+            label="Tools">
+            <separator
+                  name="group0">
+            </separator> 
+            <separator name="group1"/>
+            <separator
+                  name="group2">
+            </separator>
+         </menu> 
+         <action
+               class="org.apusic.studio.tools.action.ShowInExplorerAction"
+               enablesFor="1"
+               icon="icons/folder_go.png"
+               id="org.apusic.tools.actions.ShowInExplorerAction"
+               label="Show In Explorer"
+               menubarPath="org.apusic.studio.tools.menu">
+         </action>
+         <action
+               class="org.apusic.studio.tools.action.OpenTerminalAction"
+               enablesFor="1"
+               icon="icons/application_osx_terminal.png"
+               id="org.apusic.studio.tools.actions.OpenTerminalAction"
+               label="Open Terminal"
+               menubarPath="org.apusic.studio.tools.menu">
+         </action>
+     	 </objectContribution>
+		
+	</extension>
+	
+	<extension point="org.eclipse.core.runtime.preferences">
+      <initializer class="org.apusic.studio.tools.PreferenceInitializer"/>
+   </extension>   
+   <extension point="org.eclipse.ui.preferencePages">
+      <page
+            category="com.apusic.studio.common.apusiccommoncategory"
+            class="org.apusic.studio.tools.preference.ToolsPreferencePage"
+            id="org.apusic.studio.tools.preference.ToolsPreferencePage"
+            name="Tools">
+      </page>
+      <page
+            name="Show In Explorer"
+            class="org.apusic.studio.tools.preference.ShowInExplorerPreferencePage"
+            id="org.apusic.studio.tools.preference.ShowInExplorerPreferencePage"
+            category="org.apusic.studio.tools.preference.ToolsPreferencePage">
+      </page>
+      <page
+            name="Open Terminal"
+            class="org.apusic.studio.tools.preference.OpenTerminalPreferencePage"
+            id="org.apusic.studio.tools.preference.OpenTerminalPreferencePage"
+            category="org.apusic.studio.tools.preference.ToolsPreferencePage">
+      </page>
+   </extension>
+	
+	<extension
+         point="org.eclipse.ui.commands">
+		 <command
+	            name="Encode For GBK"
+	            description="Encode For GBK"
+	            defaultHandler="org.chong.ui.GBKEncodeActionHandler"
+	            categoryId="org.eclipse.ui.category.navigate"
+	            id="org.chong.ui.EncodeToGBKEditorAction.open">
+	      </command>
+	      <command
+	            name="Encode For UTF-8"
+	            description="Encode For UTF-8"
+	            defaultHandler="org.chong.ui.UTF8EncodeActionHandler"
+	            categoryId="org.eclipse.ui.category.navigate"
+	            id="org.chong.ui.EncodeToUTF8EditorAction.open">
+	      </command>
+     </extension>
+     
+     <extension
+         point="org.eclipse.ui.bindings">
+      <!--  win32:  M1=CTRL,    M2=SHIFT, M3=ALT, M4=-
+            carbon: M1=COMMAND, M2=SHIFT, M3=ALT, M4=CTRL -->
+     <key
+            sequence="M2+M3+K"
+            commandId="org.chong.ui.EncodeToGBKEditorAction.open"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration" />
+    <key
+            sequence="M2+M3+F8"
+            commandId="org.chong.ui.EncodeToUTF8EditorAction.open"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration" />
+     </extension>
+
+</plugin>
