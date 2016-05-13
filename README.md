@@ -8,7 +8,7 @@
 
 场景二：反过来，如果设置工作区为GBK编码来查看UTF-8编码的Jar包，则查看UTF-8编码的Jar包，就会显示乱码。
 
-alt
+![](org.chong.encode/icons/2.jpg)
 
 ##常规解决方法
 
@@ -22,17 +22,17 @@ alt
 
 场景一：GBK编码的Jar包，在UTF-8编码的工作区下显示乱码，则只需要右键菜单Encode For GBK，或者按快捷键<Shift + Alt + K>（1.0.3版本快捷键更新）。
 
-alt
+![](org.chong.encode/icons/3.jpg)
 
 场景二：UTF-8编码的Jar包，在GBK编码的工作区下显示乱码，则只需要右键菜单Encode For UTF-8，或者按快捷键<Shift + Alt + F8>。
 
-alt
+![](org.chong.encode/icons/4.jpg)
 
 ##插件安装方法
 
 Help菜单项，选择Instance New Software，Update Site URL地址： http://www.xiaoyaochong.net/encode
 
-
+![](org.chong.encode/icons/5.jpeg)
 
 注意
 
