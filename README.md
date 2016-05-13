@@ -4,7 +4,7 @@
 
 场景一：如果设置工作区为UTF-8编码来查看GBK编码的Jar包，可以显示正确的中文文字，但是查看GBK编码的Jar包，就会显示乱码。
 
-alt
+![](/org.chong.encode/icons/1.jpg)
 
 场景二：反过来，如果设置工作区为GBK编码来查看UTF-8编码的Jar包，则查看UTF-8编码的Jar包，就会显示乱码。
 
