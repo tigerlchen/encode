@@ -22,11 +22,11 @@
 
 场景一：GBK编码的Jar包，在UTF-8编码的工作区下显示乱码，则只需要右键菜单Encode For GBK，或者按快捷键<Shift + Alt + K>（1.0.3版本快捷键更新）。
 
-![](org.chong.encode/icons/3.jng)
+![](org.chong.encode/icons/3.png)
 
 场景二：UTF-8编码的Jar包，在GBK编码的工作区下显示乱码，则只需要右键菜单Encode For UTF-8，或者按快捷键<Shift + Alt + F8>。
 
-![](org.chong.encode/icons/4.jng)
+![](org.chong.encode/icons/4.png)
 
 ##插件安装方法
 
